@@ -22,7 +22,8 @@ console.log("Result recursion function v1 = " + getSum(arrSum));
 //version 2
 function getSum2 (a) {
     let result = 0;
-    let tempMass = a;
+    let tempMass = [];
+    Object.assign(tempMass, a);
     function sum (mass) {
         result += mass.pop();
         if (mass.length !== 0) sum (mass);
@@ -32,6 +33,7 @@ function getSum2 (a) {
 }
 let arrSum2 = [10, 20, 30];
 console.log("Result recursion function v2 = " + getSum2(arrSum2));
+console.log("arrSum2 = " + arrSum2.map(i => i).join(", "));
 
 //version 3
 let getSumMethod = {
@@ -55,6 +57,7 @@ console.log([1, 2, 3].reverse()); //reverse
 function pushUnshiftArr (arrIn, arrOut, pushUnshift) {
     if (pushUnshift === 'push') {
         for (let i of arrOut) arrIn.push(i); //push
+        //arrIn.push(arrOut.map(e => e.toString()));
     }
     else {
         for (let i of arrOut.reverse()) arrIn.unshift(i); //unshift

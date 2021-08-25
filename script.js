@@ -1,0 +1,64 @@
+//task 1 start
+let arr = [1, 2, 3];
+function arrPrint (a) {
+    console.log(a.shift());
+    if (a.length !== 0) arrPrint(a);
+}
+arrPrint (arr);
+//task 1 end
+
+//task 2 start
+let result = 0;
+let arr2 = [1, 2, 3];
+function getSum (a) {
+    result += a.pop();
+    if (a.length !== 0) getSum(a);
+    return result;
+}
+console.log(getSum(arr2));
+//task 2 end
+
+//task 3 start
+console.log([1, 2, 3].concat([4, 5, 6])); //concat
+console.log([1, 2, 3].reverse()); //reverse
+
+//push and unshift start
+function pushUnshiftArr (arrIn, arrOut, pushUnshift) {
+    if (pushUnshift === 'push') {
+        for (let i of arrOut) arrIn.push(i); //push
+    }
+    else {
+        for (let i of arrOut.reverse()) arrIn.unshift(i); //unshift
+    }
+    return arrIn;
+}
+console.log(pushUnshiftArr([1, 2, 3], [4, 5, 6], "push")); //push
+console.log(pushUnshiftArr([1, 2, 3], [4, 5, 6], "unshift")); //unshift
+
+function pushUnshiftArrRecursion (arrIn, arrOut, pushUnshift) {
+    if (pushUnshift === 'push') {
+        arrIn.push(arrOut.shift()); //push
+    }
+    else {
+        arrIn.unshift(arrOut.pop()); //unshift
+    }
+    if (arrOut.length !== 0) pushUnshiftArrRecursion (arrIn, arrOut, pushUnshift);
+    return arrIn;
+}
+console.log(pushUnshiftArrRecursion([10, 20, 30], [40, 50, 60], "push")) //push recursion function
+console.log(pushUnshiftArrRecursion([10, 20, 30], [40, 50, 60], "unshift")) //unshift recursion function
+//push and unshift end
+
+console.log(['js', 'css', 'jq'].shift()); //shift
+console.log(['js', 'css', 'jq'].pop()); //pop
+
+//slice start
+let massToSlice = [1, 2, 3, 4, 5];
+let massToSliceStart = massToSlice.slice(0, 3);
+console.log(massToSliceStart);
+let massToSliceEnd = massToSlice.slice(3);
+console.log(massToSliceEnd);
+//slice end
+
+console.log([3, 4, 1, 2, 7].sort()); //sort
+console.log(Object.keys({js:'test', jq: 'hello', css: 'world'})); //Object.keys

@@ -1,24 +1,53 @@
-//task 1 start
+//task 1 start -------------------------------------------------------------------
 let arr = [1, 2, 3];
 function arrPrint (a) {
     console.log(a.shift());
     if (a.length !== 0) arrPrint(a);
 }
 arrPrint (arr);
-//task 1 end
+//task 1 end -------------------------------------------------------------------
 
-//task 2 start
+//task 2 start -------------------------------------------------------------------
+
+//version 1
 let result = 0;
-let arr2 = [1, 2, 3];
+let arrSum = [1, 2, 3];
 function getSum (a) {
     result += a.pop();
     if (a.length !== 0) getSum(a);
     return result;
 }
-console.log(getSum(arr2));
-//task 2 end
+console.log("Result recursion function v1 = " + getSum(arrSum));
 
-//task 3 start
+//version 2
+function getSum2 (a) {
+    let result = 0;
+    let tempMass = a;
+    function sum (mass) {
+        result += mass.pop();
+        if (mass.length !== 0) sum (mass);
+    }
+    sum (tempMass);
+    return result;
+}
+let arrSum2 = [10, 20, 30];
+console.log("Result recursion function v2 = " + getSum2(arrSum2));
+
+//version 3
+let getSumMethod = {
+    result: 0,
+    sum: function sum (mass) {
+        this.result += mass.pop();
+        if (mass.length !== 0) this.sum (mass);
+    }
+}
+let arrSum3 = [100, 200, 300];
+getSumMethod.sum(arrSum3);
+console.log("Result recursion method v3 = " + getSumMethod.result);
+
+//task 2 end -------------------------------------------------------------------
+
+//task 3 start -------------------------------------------------------------------
 console.log([1, 2, 3].concat([4, 5, 6])); //concat
 console.log([1, 2, 3].reverse()); //reverse
 
@@ -62,3 +91,5 @@ console.log(massToSliceEnd);
 
 console.log([3, 4, 1, 2, 7].sort()); //sort
 console.log(Object.keys({js:'test', jq: 'hello', css: 'world'})); //Object.keys
+
+//task 3 end -------------------------------------------------------------------

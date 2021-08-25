@@ -7,8 +7,8 @@ function arrPrint (a) {
 arrPrint (arr);
 //task 1 end -------------------------------------------------------------------
 
-//task 2 start -------------------------------------------------------------------
 
+//task 2 start -------------------------------------------------------------------
 //version 1
 let result = 0;
 let arrSum = [1, 2, 3];
@@ -44,8 +44,8 @@ let getSumMethod = {
 }
 let arrSum3 = [100, 200, 300];
 console.log("Result recursion method v3 = " + getSumMethod.sum(arrSum3));
-
 //task 2 end -------------------------------------------------------------------
+
 
 //task 3 start -------------------------------------------------------------------
 console.log([1, 2, 3].concat([4, 5, 6])); //concat
@@ -91,5 +91,4 @@ console.log(massToSliceEnd);
 
 console.log([3, 4, 1, 2, 7].sort()); //sort
 console.log(Object.keys({js:'test', jq: 'hello', css: 'world'})); //Object.keys
-
 //task 3 end -------------------------------------------------------------------

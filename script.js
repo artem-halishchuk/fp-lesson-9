@@ -46,6 +46,7 @@ let getSumMethod = {
 }
 let arrSum3 = [100, 200, 300];
 console.log("Result recursion method v3 = " + getSumMethod.sum(arrSum3));
+console.log("arrSum3 = " + arrSum2.map(i => i).join(", "));
 //task 2 end -------------------------------------------------------------------
 
 

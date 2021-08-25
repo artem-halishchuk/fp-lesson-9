@@ -39,11 +39,11 @@ let getSumMethod = {
     sum: function sum (mass) {
         this.result += mass.pop();
         if (mass.length !== 0) this.sum (mass);
+        return this.result;
     }
 }
 let arrSum3 = [100, 200, 300];
-getSumMethod.sum(arrSum3);
-console.log("Result recursion method v3 = " + getSumMethod.result);
+console.log("Result recursion method v3 = " + getSumMethod.sum(arrSum3));
 
 //task 2 end -------------------------------------------------------------------
 

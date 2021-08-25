@@ -1,7 +1,7 @@
 //task 1 start -------------------------------------------------------------------
 let arr = [1, 2, 3];
 function arrPrint (a) {
-    console.log(a.shift());
+    a.shift();
     if (a.length !== 0) arrPrint(a);
 }
 arrPrint (arr);

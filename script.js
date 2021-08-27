@@ -57,11 +57,12 @@ console.log([1, 2, 3].reverse()); //reverse
 //push and unshift start
 function pushUnshiftArr (arrIn, arrOut, pushUnshift) {
     if (pushUnshift === 'push') {
-        for (let i of arrOut) arrIn.push(i); //push
-        //arrIn.push(arrOut.map(e => e.toString()));
+        //for (let i of arrOut) arrIn.push(i); //push
+        arrOut.map(e => arrIn.push(e)); //push
     }
     else {
-        for (let i of arrOut.reverse()) arrIn.unshift(i); //unshift
+        //for (let i of arrOut.reverse()) arrIn.unshift(i); //unshift
+        arrOut.reverse().map(e => arrIn.unshift(e));
     }
     return arrIn;
 }
